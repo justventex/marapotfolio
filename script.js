@@ -18,6 +18,30 @@ function getMaxRadius(x, y) {
 }
 
 function initInteractions(container = document) {
+  // --- Mobile Navigation ---
+  const hamburger = container.querySelector('.hamburger');
+  const navbarNav = container.querySelector('.navbar__nav');
+
+  if (hamburger && navbarNav) {
+    const navbar = hamburger.closest('.navbar');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      navbarNav.classList.toggle('is-open');
+      if (navbar) navbar.classList.toggle('is-menu-open');
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = navbarNav.querySelectorAll('.navbar__link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-active');
+        navbarNav.classList.remove('is-open');
+        if (navbar) navbar.classList.remove('is-menu-open');
+      });
+    });
+  }
+
   // --- Category Filter (Work page) ---
   const filterBtns = container.querySelectorAll('.filters__btn');
   const projectCards = container.querySelectorAll('.project-card');
