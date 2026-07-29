@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Mara Dobbelfeld</title>
   <meta name="description" content="About Mara Dobbelfeld — Interactive Media Designer. Career timeline, work experience, and skills.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20">
 </head>
-<body>
+<body data-barba="wrapper">
+  <main data-barba="container" data-barba-namespace="about">
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
@@ -30,7 +31,7 @@
   <section class="container">
     <div class="about-intro">
       <div class="about-intro__image">
-        <div class="img-placeholder img-placeholder--portrait"></div>
+        <img src="mara_portrait.jpg" alt="Mara Dobbelfeld Portrait" class="about-intro__portrait">
       </div>
       <div class="about-intro__text">
         <h2>Who Am I</h2>
@@ -175,6 +176,11 @@
     <p>&copy; 2025 Mara Dobbelfeld. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  </main>
+
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://unpkg.com/@barba/prefetch"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>
